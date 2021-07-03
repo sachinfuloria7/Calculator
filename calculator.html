@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css_calculator.css">
+    <style>
+        .outer {
+            width: vw;
+        }
+
+        .calculator {
+            width: vw;
+
+            background-color: #f3ca20;
+        }
+        .operator {
+            background-color: aqua;
+        }
+
+        .main {
+            width: vw;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .main td 
+        {
+            width: 15cm;
+            height: 1cm;
+            font-size: xx-large;
+            transition: 0s ease-in-out;
+        }
+
+        .main td:hover 
+        {
+            background-color: orangered;
+        }
+
+        .button 
+        {
+            background-color: greenyellow;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="calculator">
+            <div class="main">
+                <table border="5">
+                    <caption>
+                        <h1 style="font-style: italic;">Calculator</h1> 
+                    </caption>
+                    <tr>
+                        <td colspan="2" id="output">
+                        </td>
+                        <td id="+" class="operator">
+                            +
+                        </td>
+                        <td id="clear" class="operator">
+                            Clear
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="7">
+                            7
+                        </td>
+                        <td id="8">
+                            8
+                        </td>
+                        <td id="9">
+                            9
+                        </td>
+                        <td id="-" class="operator">
+                            -
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="4">
+                            4
+                        </td>
+                        <td id="5">
+                            5
+                        </td>
+                        <td id="6">
+                            6
+                        </td>
+                        <td id="*" class="operator">
+                            *
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="1">
+                            1
+                        </td>
+                        <td id="2">
+                            2
+                        </td>
+                        <td id="3">
+                            3
+                        </td>
+                        <td id="/" class="operator">
+                            /
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="change">
+                            +/-
+                        </td>
+                        <td id="zero">
+                            0
+                        </td>
+                        <td id="point">
+                            .
+                        </td>
+                        <td id="=" class="operator">
+                            =
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var str = "";
+        var x = document.getElementById("output");
+        var a = document.getElementById("1");
+        a.addEventListener("click", function () {
+            str += "1";
+            x.innerHTML = (str);
+        })
+        var zero = document.getElementById("zero")
+        zero.addEventListener("click", function () {
+            str += "0";
+            x.innerHTML = (str);
+
+        })
+        var b = document.getElementById('2');
+        b.addEventListener("click", function () {
+            str += "2";
+            x.innerHTML = (str);
+        })
+        var c = document.getElementById('3');
+        c.addEventListener("click", function () {
+            str += "3";
+            x.innerHTML = (str);
+        })
+        var d = document.getElementById('4');
+        d.addEventListener("click", function () {
+            str += "4";
+            x.innerHTML = (str);
+
+        })
+        var point = document.getElementById("point");
+        {
+            point.addEventListener("click", function () {
+                str += ".";
+                x.innerHTML = str;
+            })
+        }
+        var e = document.getElementById('5');
+        e.addEventListener("click", function () {
+            str += "5";
+            x.innerHTML = (str);
+
+        })
+        var f = document.getElementById('6');
+        f.addEventListener("click", function () {
+            str += "6";
+            x.innerHTML = (str);
+
+        })
+
+        var g = document.getElementById('7');
+        g.addEventListener("click", function () {
+            str += "7";
+            x.innerHTML = (str);
+
+        })
+        var h = document.getElementById('8');
+        h.addEventListener("click", function () {
+            str += "8";
+            x.innerHTML = (str);
+
+            console.log(str);
+        })
+        var i = document.getElementById('9');
+        i.addEventListener('click', function () {
+            str += "9";
+            x.innerHTML = (str);
+        }
+        )
+        var plus = document.getElementById("+");
+        plus.addEventListener("click", function () {
+            str += "+";
+            x.innerHTML = (str);
+        })
+        var minus = document.getElementById("-")
+        minus.addEventListener("click", function () {
+            str += "-";
+            x.innerHTML = (str);
+
+        })
+        var mul = document.getElementById("*")
+        mul.addEventListener("click", function () {
+            str += "*";
+            x.innerHTML = (str);
+
+        })
+        var divide = document.getElementById("/")
+        divide.addEventListener("click", function () {
+            str += "/";
+            x.innerHTML = (str);
+
+        })
+        var final = document.getElementById("=")
+        final.addEventListener("click", function () {
+            console.log(str);
+            x.innerHTML = eval(str);
+            str = eval(str);
+        }
+        )
+        var clear = document.getElementById("clear")
+        {
+            clear.addEventListener("click", function () {
+                str = "";
+                x.innerHTML = (str);
+            }
+            );
+        }
+
+    </script>
+</body>
+
+</html>
